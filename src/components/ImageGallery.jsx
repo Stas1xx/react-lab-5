@@ -9,11 +9,27 @@ export default function ImageGallery() {
   const [index, setIndex] = useState(0);
 
   return (
-    <div style={{ border: '1px solid black', padding: '10px', marginTop: '20px' }}>
+    <div style={{ 
+      border: '1px solid black', 
+      padding: '10px', 
+      marginTop: '20px',
+      display: 'flex', 
+      flexDirection: 'column', 
+      alignItems: 'center' 
+    }}>
       <h3>Завдання 5: Галерея</h3>
-      <img src={images[index]} alt="галерея" style={{ width: '200px', height: '200px', objectFit: 'cover' }} />
-      <button disabled={index === 0} onClick={() => setIndex(index - 1)}>Попереднє</button>
-      <button disabled={index === 2} onClick={() => setIndex(index + 1)}>Наступне</button>
+      
+      <img 
+        src={images[index]} 
+        alt="галерея" 
+        style={{ width: '200px', height: '200px', objectFit: 'cover', marginBottom: '10px' }} 
+      />
+      
+      {/* Обгорнули кнопки в окремий div, щоб вони завжди були під фото */}
+      <div>
+        <button disabled={index === 0} onClick={() => setIndex(index - 1)}>Попереднє</button>
+        <button disabled={index === images.length - 1} onClick={() => setIndex(index + 1)}>Наступне</button>
+      </div>
     </div>
   );
 }
