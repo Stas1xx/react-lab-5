@@ -13,7 +13,6 @@ export default function ShoppingList() {
 
   const deleteItem = (id) => setItems(items.filter(item => item.id !== id));
   
-  // Функція для перемикання галочки
   const toggleCheck = (id) => {
     setItems(items.map(item => item.id === id ? { ...item, checked: !item.checked } : item));
   };
@@ -33,7 +32,6 @@ export default function ShoppingList() {
             checked={item.checked} 
             onChange={() => toggleCheck(item.id)} 
           /> 
-          {/* Додали умову: якщо checked === true, то текст закреслюється */}
           <span style={{ textDecoration: item.checked ? 'line-through' : 'none' }}>
             {item.name} (Кількість: {item.count})
           </span>

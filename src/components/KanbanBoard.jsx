@@ -4,7 +4,6 @@ export default function KanbanBoard() {
   const [tasks, setTasks] = useState([]);
   const [text, setText] = useState('');
 
-  // Додавання нової задачі на дошку
   const addTask = () => {
     if (text.trim() !== '') {
       setTasks([...tasks, { id: Date.now(), text, status: 'todo' }]);
@@ -12,12 +11,10 @@ export default function KanbanBoard() {
     }
   };
 
-  // Переміщення між колонками
   const move = (id, newStatus) => {
     setTasks(tasks.map(t => t.id === id ? { ...t, status: newStatus } : t));
   };
 
-  // Видалення задачі з дошки
   const deleteTask = (id) => {
     setTasks(tasks.filter(t => t.id !== id));
   };

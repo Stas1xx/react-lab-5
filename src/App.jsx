@@ -6,7 +6,6 @@ import KanbanBoard from './components/KanbanBoard';
 import ShoppingList from './components/ShoppingList';
 
 export default function App() {
-  // Стан для головного завдання (To-Do List)
   const [tasks, setTasks] = useState([]);
 
   const addTask = (text) => setTasks([...tasks, { id: Date.now(), text, completed: false }]);

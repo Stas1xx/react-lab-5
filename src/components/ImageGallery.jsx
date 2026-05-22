@@ -25,7 +25,6 @@ export default function ImageGallery() {
         style={{ width: '200px', height: '200px', objectFit: 'cover', marginBottom: '10px' }} 
       />
       
-      {/* Обгорнули кнопки в окремий div, щоб вони завжди були під фото */}
       <div>
         <button disabled={index === 0} onClick={() => setIndex(index - 1)}>Попереднє</button>
         <button disabled={index === images.length - 1} onClick={() => setIndex(index + 1)}>Наступне</button>
